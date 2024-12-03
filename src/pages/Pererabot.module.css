@@ -1,0 +1,319 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh; 
+    margin: 0; /* Убираем отступы */
+  }
+
+  .pererabotContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Изменено с center на flex-start */
+    height: 100vh; /* Делаем контейнер по высоте экрана */
+    padding-top: 40px; /* Добавлено для смещения формы вверх */
+}
+  
+  .alert {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #38d39f; /* Измените цвет фона */
+    color: #ffffff; /* Цвет текста */
+  }
+  
+  .recyclingAddresses {
+    text-align: center; /* Центрируем адреса */
+    margin-top: 20px;
+  }
+  
+  .recyclingAddresses ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+  }
+  
+  .recyclingAddresses li {
+    font-size: 1.1em;
+    margin-bottom: 10px; /* Немного отступа между адресами */
+  }
+
+  .submitButton {
+    background-color: #38d39f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    
+  }
+  
+  .submitButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  
+  .wave {
+    display: none;
+}
+
+.pererabotContent {
+    justify-content: center;
+}
+
+  .wave {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0.5;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Задаем максимальную ширину для контейнера */
+    padding: 2rem;
+  }
+  
+  .img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .pererabotContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .img img {
+    width: 700px;
+    z-index: 2;
+  }
+  
+  .pererabotContent h2 {
+    margin: 15px 0;
+    color: #333;
+    font-weight: 700;
+    font-size: 2.9rem;
+  }
+  
+  .inputDiv {
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #d9d9d9;
+  }
+  
+  .inputDiv.one {
+    margin-top: 0;
+  }
+  
+  .i {
+    color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .i i {
+    transition: .3s;
+  }
+  
+  .inputWrapper {
+    position: relative;
+    height: 45px;
+  }
+  
+  .inputWrapper h5 {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 18px;
+    transition: .3s;
+  }
+  
+  .inputDiv:before,
+  .inputDiv:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: #38d39f;
+    transition: .4s;
+  }
+  
+  .inputDiv:before {
+    right: 50%;
+  }
+  
+  .inputDiv:after {
+    left: 50%;
+  }
+  
+  .inputDiv.focus:before,
+  .inputDiv.focus:after {
+    width: 50%;
+  }
+  
+  .inputDiv.focus .inputWrapper h5 {
+    top: -5px;
+    font-size: 15px;
+    color: #38d39f;
+  }
+  
+  .inputDiv.focus .i i {
+    color: #38d39f;
+  }
+  
+  .inputDiv .inputWrapper input,
+  .inputDiv .inputWrapper textarea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .inputDiv.pass {
+    margin-bottom: 4px;
+  }
+  
+  .locationWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  
+  .locationWrapper input {
+    width: 48%;
+    height: 40px;
+    padding: 0 0.7rem;
+    font-size: 1rem;
+    color: #555;
+    background: none; /* Убираем фон */
+    border: none; /* Убираем стандартную границу */
+    border-bottom: 2px solid #d9d9d9; /* Линия снизу */
+  }
+  
+  .locationWrapper input:focus {
+    outline: none; /* Убираем обводку при фокусе */
+    border-bottom: 2px solid #38d39f; /* Линия снизу при фокусе */
+  }
+  
+  textarea {
+    resize: none;
+    height: 150px;
+  }
+  
+  /* Кнопка отправки */
+  .buttonsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; 
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: .5s;
+  }
+  
+  .btn:hover {
+    background-position: right;
+  }
+  
+  .avatarWrapper {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .avatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .ellipse {
+    position: absolute;
+    bottom: -150px;
+    left: -190px;
+    width: 650px; /* Размер изображения, можно изменить */
+  }
+  
+  .star {
+    position: absolute;
+    bottom: -120px;
+    right: 20px;
+    width: 450px; /* Размер изображения, можно изменить */
+    
+  }
+  
+
+  /* Адаптивность */
+  @media screen and (max-width: 1050px) {
+    .container {
+        grid-gap: 5rem;
+    }
+  }
+  
+  @media screen and (max-width: 1000px) {
+    form {
+        width: 290px;
+    }
+  
+    .pererabotContent h2 {
+        font-size: 2.4rem;
+        margin: 8px 0;
+    }
+  
+    .img img {
+        width: 400px;
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+  
+    .img {
+        display: none;
+    }
+  }
